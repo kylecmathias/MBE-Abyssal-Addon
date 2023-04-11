@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "sk:lava_crawler",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/lava_crawler"
+			},
+			"geometry": {
+				"default": "geometry.lava_crawler"
+			},
+			"render_controllers": [
+				"controller.render.lava_crawler"
+			],
+			"spawn_egg": {
+				"base_color": "#FF5500",
+				"overlay_color": "#2A2A2A"
+			},
+			"animations": {
+				"lava_crawler.idle": "animation.lava_crawler.idle",
+				"lava_crawler.movement": "animation.lava_crawler.movement",
+				"lava_crawler.attack_melee": "animation.lava_crawler.attack_melee",
+				"lava_crawler.attack_ranged": "animation.lava_crawler.attack_ranged"
+			},
+			"scripts": {
+				"animate": [
+					"lava_crawler.idle",
+					"lava_crawler.movement",
+					"lava_crawler.attack_melee",
+					"lava_crawler.attack_ranged"
+				]
+			}
+		}
+	}
+}

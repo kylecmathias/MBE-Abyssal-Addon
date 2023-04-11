@@ -1,0 +1,20 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "sk:specter_bullet_weak",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/specter_bullet_weak"
+			},
+			"geometry": {
+				"default": "geometry.specter_bullet_weak"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

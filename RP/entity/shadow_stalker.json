@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "sk:shadow_stalker",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/shadow_stalker"
+			},
+			"geometry": {
+				"default": "geometry.shadow_stalker"
+			},
+			"render_controllers": [
+				"controller.render.shadow_stalker"
+			],
+			"spawn_egg": {
+				"base_color": "#1E1E1E",
+				"overlay_color": "#FF0000"
+			},
+			"animations": {
+				"shadow_stalker.idle": "animation.shadow_stalker.idle",
+				"shadow_stalker.movement": "animation.shadow_stalker.running",
+				"shadow_stalker.attack": "animation.shadow_stalker.attack"
+			},
+			"scripts": {
+				"animate": [
+					"shadow_stalker.attack",
+					"shadow_stalker.idle",
+					"shadow_stalker.movement"
+				]
+			}
+		}
+	}
+}

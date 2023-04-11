@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "sk:phantom_sniper",
+			"materials": {
+				"default": "entity_alphatest",
+				"enraged": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/phantom_sniper_calm",
+				"enraged": "textures/entity/phantom_sniper_enraged"
+			},
+			"geometry": {
+				"default": "geometry.phantom_sniper",
+				"enraged": "geometry.phantom_sniper"
+			},
+			"render_controllers": [
+				"controller.render.phantom_sniper"
+			],
+			"spawn_egg": {
+				"base_color": "#575757",
+				"overlay_color": "#000000"
+			}
+		}
+	}
+}

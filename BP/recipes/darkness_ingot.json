@@ -1,0 +1,20 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "sk:darkness_ingot"
+		},
+		"tags": [
+			"forge"
+		],
+		"ingredients": [
+			{
+				"item": "sk:darkness_ore",
+				"count": 1
+			}
+		],
+		"result": {
+			"item": "sk:darkness_ingot"
+		}
+	}
+}

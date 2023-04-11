@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "sk:abyss_ingot"
+		},
+		"tags": [
+			"titanium anvil"
+		],
+		"ingredients": [
+			{
+				"item": "sk:abyss_scrap",
+				"count": 4
+			},
+			{
+				"item": "minecraft:netherite_ingot",
+				"count": 4
+			}
+		],
+		"result": {
+			"item": "sk:abyss_ingot",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "sk:titanium_rod"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "sk:titanium_ingot"
+			}
+		},
+		"pattern": [
+			"#",
+			"#"
+		],
+		"result": {
+			"item": "sk:titanium_rod",
+			"count": 2
+		}
+	}
+}

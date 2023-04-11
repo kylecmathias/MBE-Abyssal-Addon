@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "sk:magma_sword"
+		},
+		"tags": [
+			"titanium anvil"
+		],
+		"key": {
+			"!": {
+				"item": "sk:magma_ingot"
+			},
+			"#": {
+				"item": "minecraft:netherite_ingot"
+			},
+			"@": {
+				"item": "sk:titanium_rod"
+			}
+		},
+		"pattern": [
+			"!",
+			"@",
+			"#"
+		],
+		"result": {
+			"item": "sk:magma_sword",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "sk:darkness_sword"
+		},
+		"tags": [
+			"titanium anvil"
+		],
+		"key": {
+			"!":{
+				"item": "sk:darkness_ingot"
+			},
+			"#": {
+				"item": "minecraft:netherite_ingot"
+			},
+			"@": {
+				"item": "sk:titanium_rod"
+			}
+		},
+		"pattern": [
+			"!",
+			"@",
+			"#"
+		],
+		"result": {
+			"item": "sk:darkness_sword",
+			"count": 1
+		}
+	}
+}

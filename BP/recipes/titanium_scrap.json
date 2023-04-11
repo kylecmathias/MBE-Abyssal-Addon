@@ -1,0 +1,14 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "sk:titanium_scrap"
+		},
+		"tags": [
+			"blast_furnace",
+			"furnace"
+		],
+		"input": "sk:titanium_ore",
+		"output": "sk:titanium_scrap"
+	}
+}

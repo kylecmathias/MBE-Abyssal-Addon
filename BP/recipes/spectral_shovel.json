@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "sk:spectral_shovel"
+		},
+		"tags": [
+			"titanium anvil"
+		],
+		"key": {
+			"#": {
+				"item": "sk:spectral_ingot"
+			},
+			"$": {
+				"item": "sk:titanium_rod"
+			},
+			"@": {
+				"item": "minecraft:netherite_ingot"
+			}
+		},
+		"pattern": [
+			" #",
+			"@$",
+			" $"
+		],
+		"result": {
+			"item": "sk:spectral_shovel",
+			"count": 1
+		}
+	}
+}

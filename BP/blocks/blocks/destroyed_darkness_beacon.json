@@ -1,0 +1,17 @@
+{
+	"format_version": "1.19.50",
+	"minecraft:block": {
+		"description": {
+			"identifier": "sk:destroyed_darkness_beacon"
+		},
+		"components": {
+			"minecraft:geometry": "geometry.destroyed_darkness_beacon",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "sk_destroyed_darkness_beacon",
+					"render_method": "alpha_test"
+				}
+			}
+		}
+	}
+}

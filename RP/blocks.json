@@ -1,0 +1,65 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"sk:magma_ore": {
+		"sound": "stone",
+		"textures": "sk_magma_ore"
+	},
+	"sk:darkness_ore": {
+		"sound": "stone",
+		"textures": "sk_darkness_ore"
+	},
+	"sk:spectral_ore": {
+		"sound": "stone",
+		"textures": "sk_spectral_ore"
+	},
+	"sk:titanium_ore": {
+		"sound": "stone",
+		"textures": "sk_titanium_ore"
+	},
+	"sk:forge": {
+		"sound": "stone",
+		"textures": "sk_forge"
+	},
+	"sk:titanium_block": {
+		"sound": "stone",
+		"textures": "sk_titanium_block"
+	},
+	"sk:titanium_anvil": {
+		"sound": "stone",
+		"textures": "sk_titanium_anvil"
+	},
+	"sk:antidote_emblem": {
+		"sound": "stone",
+		"textures": "sk_antidote_emblem"
+	},
+	"sk:miner_emblem": {
+		"sound": "stone",
+		"textures": "sk_miner_emblem"
+	},
+	"sk:abyss_ore": {
+		"sound": "stone",
+		"textures": "sk_abyss_ore"
+	},
+	"sk:magma_beacon": {
+		"sound": "stone"
+	},
+	"sk:darkness_beacon": {
+		"sound": "stone"
+	},
+	"sk:spectral_beacon": {
+		"sound": "stone"
+	},
+	"sk:destroyed_magma_beacon": {
+		"sound": "stone"
+	},
+	"sk:destroyed_darkness_beacon": {
+		"sound": "stone"
+	},
+	"sk:destroyed_spectral_beacon": {
+		"sound": "stone"
+	}
+}

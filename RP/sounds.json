@@ -1,0 +1,23 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"sk:testcow": {
+				"volume": 1,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.testcow.say",
+					"hurt": "mob.testcow.hurt",
+					"death": "mob.testcow.hurt",
+					"step": {
+						"sound": "mob.testcow.step",
+						"volume": 0.15,
+						"pitch": 1
+					}
+				}
+			}
+		}
+	}
+}

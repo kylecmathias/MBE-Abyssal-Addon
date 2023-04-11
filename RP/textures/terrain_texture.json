@@ -1,0 +1,50 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "Abyssal Addon",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"sk_magma_ore": {
+			"textures": "textures/blocks/magma_ore"
+		},
+		"sk_darkness_ore": {
+			"textures": "textures/blocks/darkness_ore"
+		},
+		"sk_spectral_ore": {
+			"textures": "textures/blocks/spectral_ore"
+		},
+		"sk_titanium_ore": {
+			"textures": "textures/blocks/titanium_ore"
+		},
+		"sk_forge": {
+			"textures": "textures/blocks/forge"
+		},
+		"sk_titanium_block": {
+			"textures": "textures/blocks/titanium_block"
+		},
+		"sk_titanium_anvil": {
+			"textures": "textures/blocks/titanium_anvil"
+		},
+		"sk_abyss_ore": {
+			"textures": "textures/blocks/abyss_ore"
+		},
+		"sk_magma_beacon": {
+			"textures": "textures/blocks/magma_beacon"
+		},
+		"sk_darkness_beacon": {
+			"textures": "textures/blocks/darkness_beacon"
+		},
+		"sk_spectral_beacon": {
+			"textures": "textures/blocks/spectral_beacon"
+		},
+		"sk_destroyed_magma_beacon": {
+			"textures": "textures/blocks/destroyed_magma_beacon"
+		},
+		"sk_destroyed_darkness_beacon": {
+			"textures": "textures/blocks/destroyed_darkness_beacon"
+		},
+		"sk_destroyed_spectral_beacon": {
+			"textures": "textures/blocks/destroyed_spectral_beacon"
+		}
+	}
+}

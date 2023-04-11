@@ -1,0 +1,192 @@
+{
+	"resource_pack_name": "Abyssal Addon",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"sk_titanium_scrap": {
+			"textures": "textures/items/titanium_scrap"
+		},
+		"sk_titanium_ingot": {
+			"textures": "textures/items/titanium_ingot"
+		},
+		"sk_magma_ingot": {
+			"textures": "textures/items/magma_ingot"
+		},
+		"sk_darkness_ingot": {
+			"textures": "textures/items/darkness_ingot"
+		},
+		"sk_spectral_ingot": {
+			"textures": "textures/items/spectral_ingot"
+		},
+		"sk_magma_helmet": {
+			"textures": "textures/items/magma_helmet"
+		},
+		"sk_magma_chestplate": {
+			"textures": "textures/items/magma_chestplate"
+		},
+		"sk_magma_leggings": {
+			"textures": "textures/items/magma_leggings"
+		},
+		"sk_magma_boots": {
+			"textures": "textures/items/magma_boots"
+		},
+		"sk_darkness_helmet": {
+			"textures": "textures/items/darkness_helmet"
+		},
+		"sk_darkness_chestplate": {
+			"textures": "textures/items/darkness_chestplate"
+		},
+		"sk_darkness_leggings": {
+			"textures": "textures/items/darkness_leggings"
+		},
+		"sk_darkness_boots": {
+			"textures": "textures/items/darkness_boots"
+		},
+		"sk_spectral_helmet": {
+			"textures": "textures/items/spectral_helmet"
+		},
+		"sk_spectral_chestplate": {
+			"textures": "textures/items/spectral_chestplate"
+		},
+		"sk_spectral_leggings": {
+			"textures": "textures/items/spectral_leggings"
+		},
+		"sk_spectral_boots": {
+			"textures": "textures/items/spectral_boots"
+		},
+		"sk_titanium_rod": {
+			"textures": "textures/items/titanium_rod"
+		},
+		"sk_magma_sword": {
+			"textures": "textures/items/magma_sword"
+		},
+		"sk_darkness_sword": {
+			"textures": "textures/items/darkness_sword"
+		},
+		"sk_spectral_sword": {
+			"textures": "textures/items/spectral_sword"
+		},
+		"sk_magma_axe": {
+			"textures": "textures/items/magma_axe"
+		},
+		"sk_darkness_axe": {
+			"textures": "textures/items/darkness_axe"
+		},
+		"sk_spectral_axe": {
+			"textures": "textures/items/spectral_axe"
+		},
+		"sk_magma_pickaxe": {
+			"textures": "textures/items/magma_pickaxe"
+		},
+		"sk_darkness_pickaxe": {
+			"textures": "textures/items/darkness_pickaxe"
+		},
+		"sk_spectral_pickaxe": {
+			"textures": "textures/items/spectral_pickaxe"
+		},
+		"sk_magma_shovel": {
+			"textures": "textures/items/magma_shovel"
+		},
+		"sk_darkness_shovel": {
+			"textures": "textures/items/darkness_shovel"
+		},
+		"sk_spectral_shovel": {
+			"textures": "textures/items/spectral_shovel"
+		},
+		"sk_magma_hoe": {
+			"textures": "textures/items/magma_hoe"
+		},
+		"sk_darkness_hoe": {
+			"textures": "textures/items/darkness_hoe"
+		},
+		"sk_spectral_hoe": {
+			"textures": "textures/items/spectral_hoe"
+		},
+		"sk_life_emblem": {
+			"textures": "textures/items/life_emblem"
+		},
+		"sk_power_emblem": {
+			"textures": "textures/items/power_emblem"
+		},
+		"sk_guardian_emblem": {
+			"textures": "textures/items/guardian_emblem"
+		},
+		"sk_aquatic_emblem": {
+			"textures": "textures/items/aquatic_emblem"
+		},
+		"sk_mobility_emblem": {
+			"textures": "textures/items/mobility_emblem"
+		},
+		"sk_lunar_emblem": {
+			"textures": "textures/items/lunar_emblem"
+		},
+		"sk_antidote_emblem": {
+			"textures": "textures/items/antidote_emblem"
+		},
+		"sk_miner_emblem": {
+			"textures": "textures/items/miner_emblem"
+		},
+		"sk_fighter_emblem": {
+			"textures": "textures/items/fighter_emblem"
+		},
+		"sk_healer_emblem": {
+			"textures": "textures/items/healer_emblem"
+		},
+		"sk_traveller_emblem": {
+			"textures": "textures/items/traveller_emblem"
+		},
+		"sk_explorer_emblem": {
+			"textures": "textures/items/explorer_emblem"
+		},
+		"sk_combat_emblem": {
+			"textures": "textures/items/combat_emblem"
+		},
+		"sk_adventure_emblem": {
+			"textures": "textures/items/adventure_emblem"
+		},
+		"sk_abyss_emblem": {
+			"textures": "textures/items/abyss_emblem"
+		},
+		"sk_abyss_helmet": {
+			"textures": "textures/items/abyss_helmet"
+		},
+		"sk_abyss_chestplate": {
+			"textures": "textures/items/abyss_chestplate"
+		},
+		"sk_abyss_leggings": {
+			"textures": "textures/items/abyss_leggings"
+		},
+		"sk_abyss_boots": {
+			"textures": "textures/items/abyss_boots"
+		},
+		"sk_abyss_sword": {
+			"textures": "textures/items/abyss_sword"
+		},
+		"sk_abyss_axe": {
+			"textures": "textures/items/abyss_axe"
+		},
+		"sk_abyss_pickaxe": {
+			"textures": "textures/items/abyss_pickaxe"
+		},
+		"sk_abyss_shovel": {
+			"textures": "textures/items/abyss_shovel"
+		},
+		"sk_abyss_hoe": {
+			"textures": "textures/items/abyss_hoe"
+		},
+		"sk_abyss_scrap": {
+			"textures": "textures/items/abyss_scrap"
+		},
+		"sk_abyss_ingot": {
+			"textures": "textures/items/abyss_ingot"
+		},
+		"sk_magma_soul": {
+			"textures": "textures/items/magma_soul"
+		},
+		"sk_darkess_soul": {
+			"textures": "textures/items/darkess_soul"
+		},
+		"sk_spectral_soul": {
+			"textures": "textures/items/spectral_soul"
+		}
+	}
+}

@@ -1,0 +1,241 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "sk:shadow_stalker",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:movement": {
+				"value": 0.5
+			},
+			"minecraft:boss": {
+				"hud_range": 55,
+				"name": "Shadow Stalker",
+				"should_darken_sky": true
+			},
+			"minecraft:health": {
+				"value": 2400,
+				"max": 2400
+			},
+			"minecraft:physics": {},
+			"minecraft:knockback_resistance": {
+				"value": 99999999999
+			},
+			"minecraft:behavior.random_stroll": {
+				"speed_multiplier": 0.8,
+				"interval": 20,
+				"priority": 4
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"avoid_damage_blocks": false,
+				"avoid_portals": true,
+				"can_path_over_lava": true,
+				"can_float": true,
+				"can_pass_doors": true,
+				"can_break_doors": true,
+				"can_walk_in_lava": true,
+				"can_path_over_water": true,
+				"can_swim": true
+			},
+			"minecraft:behavior.look_at_target": {},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 2
+			},
+			"minecraft:jump.static": {
+				"jump_power": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fire",
+						"deals_damage": false
+					},
+					{
+						"cause": "block_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": false
+					},
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"cause": "suffocation",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:experience_reward": {
+				"on_death": 10000
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"entity_types": {
+					"filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "mob"
+							}
+						]
+					},
+					"max_dist": 40,
+					"must_see": false
+				},
+				"priority": 3
+			},
+			"minecraft:behavior.float": {},
+			"minecraft:fire_immune": true,
+			"minecraft:floats_in_liquid": {},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"monster",
+					"boss",
+					"shadow_stalker"
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 3,
+				"width": 1
+			},
+			"minecraft:follow_range": {
+				"value": 40
+			}
+		},
+		"component_groups": {
+			"sk:stunned": {
+				"minecraft:is_stunned": {},
+				"minecraft:timer": {
+					"time_down_event": {
+						"event": "sk:cooldown"
+					},
+					"time": 3
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"damage_multiplier": 0.25,
+						"cause": "any"
+					}
+				}
+			},
+			"sk:not_stunned": {
+				"minecraft:mob_effect": {
+					"effect_range": 30,
+					"effect_time": 1,
+					"mob_effect": "darkness"
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "attack",
+						"on_damage": {
+							"event": "sk:stun"
+						}
+					}
+				},
+				"minecraft:attack": {
+					"damage": 25,
+					"effect_duration": 5,
+					"effect_name": "blindness"
+				},
+				"minecraft:behavior.melee_attack": {
+					"speed_multiplier": 1.4,
+					"track_target": true,
+					"priority": 1,
+					"look_distance": 25,
+					"reach_multiplier": 1.5
+				},
+				"minecraft:attack_damage": {
+					"value": 25
+				}
+			},
+			"sk:stun_cooldown": {
+				"minecraft:mob_effect": {
+					"effect_range": 30,
+					"effect_time": 1,
+					"mob_effect": "darkness"
+				},
+				"minecraft:attack": {
+					"damage": 40,
+					"effect_duration": 5,
+					"effect_name": "blindness"
+				},
+				"minecraft:behavior.melee_attack": {
+					"speed_multiplier": 1.8,
+					"track_target": true,
+					"priority": 1,
+					"look_distance": 25,
+					"reach_multiplier": 1.5
+				},
+				"minecraft:attack_damage": {
+					"value": 40
+				},
+				"minecraft:timer": {
+					"time_down_event": {
+						"event": "sk:unstun"
+					},
+					"time": 10
+				}
+			}
+		},
+		"events": {
+			"sk:stun": {
+				"add": {
+					"component_groups": [
+						"sk:stunned"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"sk:not_stunned"
+					]
+				}
+			},
+			"sk:unstun": {
+				"add": {
+					"component_groups": [
+						"sk:not_stunned"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"sk:stunned"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"sk:not_stunned"
+					]
+				}
+			},
+			"sk:cooldown": {
+				"add": {
+					"component_groups": [
+						"sk:stun_cooldown"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"sk:stunned"
+					]
+				}
+			}
+		}
+	}
+}

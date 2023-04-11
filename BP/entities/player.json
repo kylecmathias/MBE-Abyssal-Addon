@@ -1,0 +1,852 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:add_bad_omen": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "bad_omen",
+							"duration": 6000,
+							"visible": false,
+							"display_on_screen_animation": true
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						0,
+						0
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "minecraft:clear_add_bad_omen",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:clear_bad_omen_spell_effect": {
+				"minecraft:spell_effects": {}
+			},
+			"minecraft:raid_trigger": {
+				"minecraft:raid_trigger": {
+					"triggered_event": {
+						"event": "minecraft:remove_raid_trigger",
+						"target": "self"
+					}
+				},
+				"minecraft:spell_effects": {
+					"remove_effects": "bad_omen"
+				}
+			},
+			"sk:fall_immune": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "fall",
+						"deals_damage": false
+					}
+				}
+			},
+			"sk:guardian": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"damage_multiplier": 0.9,
+						"cause": "any"
+					}
+				}
+			},
+			"sk:fighter": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"damage_multiplier": 0.8,
+						"cause": "any"
+					}
+				}
+			},
+			"sk:combat": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"damage_multiplier": 0.7,
+						"cause": "any"
+					}
+				}
+			},
+			"sk:abyss": {
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"damage_multiplier": 0.6,
+						"cause": "any"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "Math.Min(query.player_level * 7, 100)"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"player"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "feet",
+							"value": "sk:spectral_boots"
+						},
+						"cause": "fall",
+						"damage_per_tick": 0
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:player.saturation": {
+				"value": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 4
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"inhale_time": 3.75,
+				"generates_bubbles": false
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							-0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:block_climber": {},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_mob_effect",
+									"subject": "self",
+									"value": "bad_omen"
+								},
+								{
+									"test": "is_in_village",
+									"subject": "self",
+									"value": true
+								}
+							]
+						},
+						"event": "minecraft:trigger_raid"
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_equipment",
+									"domain": "head",
+									"value": "sk:magma_helmet"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "torso",
+									"value": "sk:magma_chestplate"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "leg",
+									"value": "sk:magma_leggings"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "feet",
+									"value": "sk:magma_boots"
+								}
+							]
+						},
+						"event": "sk:fire_res"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"domain": "head",
+									"value": "sk:magma_helmet"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "torso",
+									"value": "sk:magma_chestplate"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "leg",
+									"value": "sk:magma_leggings"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "feet",
+									"value": "sk:magma_boots"
+								},
+								{
+									"test": "is_moving",
+									"subject": "player",
+									"value": true
+								}
+							]
+						},
+						"event": "sk:magma_walker"
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_equipment",
+									"domain": "head",
+									"value": "sk:darkness_helmet"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "torso",
+									"value": "sk:darkness_chestplate"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "leg",
+									"value": "sk:darkness_leggings"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "feet",
+									"value": "sk:darkness_boots"
+								}
+							]
+						},
+						"event": "sk:shadow_power"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"domain": "head",
+									"value": "sk:darkness_helmet"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "torso",
+									"value": "sk:darkness_chestplate"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "leg",
+									"value": "sk:darkness_leggings"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "feet",
+									"value": "sk:darkness_boots"
+								}
+							]
+						},
+						"event": "sk:dark_force"
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_equipment",
+									"domain": "head",
+									"value": "sk:spectral_helmet"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "torso",
+									"value": "sk:spectral_chestplate"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "leg",
+									"value": "sk:spectral_leggings"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "feet",
+									"value": "sk:spectral_boots"
+								}
+							]
+						},
+						"event": "sk:spectral_invis"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"domain": "head",
+									"value": "sk:spectral_helmet"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "torso",
+									"value": "sk:spectral_chestplate"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "leg",
+									"value": "sk:spectral_leggings"
+								},
+								{
+									"test": "has_equipment",
+									"domain": "feet",
+									"value": "sk:spectral_boots"
+								},
+								{
+									"test": "is_sneaking",
+									"operator": "!=",
+									"value": true
+								}
+							]
+						},
+						"event": "sk:ghost_flight"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "feet",
+							"value": "sk:spectral_boots"
+						},
+						"event": "sk:dont_do_fall_damage"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "feet",
+							"operator": "!=",
+							"value": "sk:spectral_boots"
+						},
+						"event": "sk:do_fall_damage"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:life_emblem"
+						},
+						"event": "sk:life"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:power_emblem"
+						},
+						"event": "sk:power"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:guardian_emblem"
+						},
+						"event": "sk:guardian"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:aquatic_emblem"
+						},
+						"event": "sk:aquatic"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:mobility_emblem"
+						},
+						"event": "sk:mobility"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:lunar_emblem"
+						},
+						"event": "sk:lunar"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:antidote_emblem"
+						},
+						"event": "sk:antidote"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:miner_emblem"
+						},
+						"event": "sk:miner"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:fighter_emblem"
+						},
+						"event": "sk:fighter"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:healer_emblem"
+						},
+						"event": "sk:healer"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:traveller_emblem"
+						},
+						"event": "sk:traveller"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:explorer_emblem"
+						},
+						"event": "sk:explorer"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:combat_emblem"
+						},
+						"event": "sk:combat"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:adventure_emblem"
+						},
+						"event": "sk:adventure"
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "hand",
+							"value": "sk:abyss_emblem"
+						},
+						"event": "sk:abyss"
+					},
+					{
+						"filters": {
+							"none_of": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"value": "sk:guardian_emblem"
+								}
+							]
+						},
+						"event": "sk:anti_guardian"
+					},
+					{
+						"filters": {
+							"none_of": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"value": "sk:fighter_emblem"
+								}
+							]
+						},
+						"event": "sk:anti_fighter"
+					},
+					{
+						"filters": {
+							"none_of": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"value": "sk:combat_emblem"
+								}
+							]
+						},
+						"event": "sk:anti_combat"
+					},
+					{
+						"filters": {
+							"none_of": [
+								{
+									"test": "has_equipment",
+									"domain": "hand",
+									"value": "sk:abyss_emblem"
+								}
+							]
+						},
+						"event": "sk:anti_abyss"
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:gain_bad_omen": {
+				"add": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				}
+			},
+			"minecraft:clear_add_bad_omen": {
+				"remove": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:clear_bad_omen_spell_effect"
+					]
+				}
+			},
+			"minecraft:trigger_raid": {
+				"add": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"minecraft:remove_raid_trigger": {
+				"remove": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"sk:fire_res": {
+				"run_command": {
+					"command": "effect @p fire_resistance 1 1 true"
+				}
+			},
+			"sk:magma_walker": {
+				"run_command": {
+					"command": "execute as @s run fill ~1 ~-1 ~1 ~-1 ~-1 ~-1 sk:hardened_magma 0 replace minecraft:lava"
+				}
+			},
+			"sk:shadow_power": {
+				"run_command": {
+					"command": "effect @p strength 1 3 true"
+				}
+			},
+			"sk:dark_force": {
+				"run_command": {
+					"command": [
+						"effect @p regeneration 1 3 true",
+						"effect @p resistance 1 3 true"
+					]
+				}
+			},
+			"sk:spectral_invis": {
+				"run_command": {
+					"command": "effect @p invisibility 1 1 true"
+				}
+			},
+			"sk:ghost_flight": {
+				"run_command": {
+					"command": [
+						"execute as @p[rx=-15,rxm=-90] run effect @s levitation 1 9 true",
+						"execute as @p[rx=-15,rxm=-90] run effect @s speed 1 4 true",
+						"execute as @p[rx=90,rxm=15] run effect @s slow_falling 1 1 true"
+					]
+				}
+			},
+			"sk:life": {
+				"run_command": {
+					"command": [
+						"effect @p health_boost 2 0 true",
+						"effect @p saturation 2 0 true"
+					]
+				}
+			},
+			"sk:power": {
+				"run_command": {
+					"command": [
+						"effect @p strength 2 0 true"
+					]
+				}
+			},
+			"sk:guardian": {
+				"run_command": {
+					"command": [
+						"effect @p resistance 2 0 true"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"sk:guardian"
+					]
+				}
+			},
+			"sk:aquatic": {
+				"run_command": {
+					"command": [
+						"effect @p conduit_power 2 0 true"
+					]
+				}
+			},
+			"sk:mobility": {
+				"run_command": {
+					"command": [
+						"effect @p speed 2 0 true",
+						"effect @p jump_boost 2 0 true"
+					]
+				}
+			},
+			"sk:lunar": {
+				"run_command": {
+					"command": [
+						"effect @p night_vision 2 0 true"
+					]
+				}
+			},
+			"sk:antidote": {
+				"run_command": {
+					"command": [
+						"effect @p poison 0 0 true",
+						"effect @p fatal_poison 0 0 true",
+						"effect @p wither 0 0 true"
+					]
+				}
+			},
+			"sk:miner": {
+				"run_command": {
+					"command": [
+						"effect @p haste 2 0 true"
+					]
+				}
+			},
+			"sk:fighter": {
+				"run_command": {
+					"command": [
+						"effect @p strength 2 1 true",
+						"effect @p resistance 2 1 true"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"sk:fighter"
+					]
+				}
+			},
+			"sk:healer": {
+				"run_command": {
+					"command": [
+						"effect @p health_boost 2 1 true",
+						"effect @p saturation 2 1 true",
+						"effect @p poison 0 0 true",
+						"effect @p fatal_poison 0 0 true",
+						"effect @p wither 0 0 true"
+					]
+				}
+			},
+			"sk:traveller": {
+				"run_command": {
+					"command": [
+						"effect @p conduit_power 2 0 true",
+						"effect @p speed 2 1 true",
+						"effect @p jump_boost 2 1 true"
+					]
+				}
+			},
+			"sk:explorer": {
+				"run_command": {
+					"command": [
+						"effect @p night_vision 2 0 true",
+						"effect @p haste 2 1 true"
+					]
+				}
+			},
+			"sk:combat": {
+				"run_command": {
+					"command": [
+						"effect @p strength 2 2 true",
+						"effect @p resistance 2 1 true",
+						"effect @p health_boost 2 2 true",
+						"effect @p saturation 2 2 true",
+						"effect @p poison 0 0 true",
+						"effect @p fatal_poison 0 0 true",
+						"effect @p wither 0 0 true"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"sk:combat"
+					]
+				}
+			},
+			"sk:adventure": {
+				"run_command": {
+					"command": [
+						"effect @p conduit_power 2 0 true",
+						"effect @p speed 2 2 true",
+						"effect @p jump_boost 2 2 true",
+						"effect @p night_vision 2 0 true",
+						"effect @p haste 2 2 true"
+					]
+				}
+			},
+			"sk:abyss": {
+				"run_command": {
+					"command": [
+						"effect @p strength 2 3 true",
+						"effect @p resistance 2 2 true",
+						"effect @p health_boost 2 4 true",
+						"effect @p saturation 2 3 true",
+						"effect @p poison 0 0 true",
+						"effect @p fatal_poison 0 0 true",
+						"effect @p wither 0 0 true",
+						"effect @p conduit_power 2 0 true",
+						"effect @p speed 2 4 true",
+						"effect @p jump_boost 2 4 true",
+						"effect @p night_vision 2 0 true",
+						"effect @p haste 2 4 true"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"sk:abyss"
+					]
+				}
+			},
+			"sk:do_fall_damage": {
+				"remove": {
+					"component_groups": [
+						"sk:fall_immune"
+					]
+				}
+			},
+			"sk:dont_do_fall_damage": {
+				"add": {
+					"component_groups": [
+						"sk:fall_immune"
+					]
+				}
+			},
+			"sk:anti_guardian": {
+				"remove": {
+					"component_groups": [
+						"sk:guardian"
+					]
+				}
+			},
+			"sk:anti_fighter": {
+				"remove": {
+					"component_groups": [
+						"sk:fighter"
+					]
+				}
+			},
+			"sk:anti_combat": {
+				"remove": {
+					"component_groups": [
+						"sk:combat"
+					]
+				}
+			},
+			"sk:anti_abyss": {
+				"remove": {
+					"component_groups": [
+						"sk:abyss"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "sk:explosive_specter_bullet_weak",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"sk:detonate_weak": {
+				"minecraft:explode": {
+					"breaks_blocks": false,
+					"causes_fire": false,
+					"fuse_length": -1,
+					"power": 1,
+					"fuse_lit": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:projectile": {
+				"anchor": 0,
+				"gravity": 0.02,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"multiple_targets": false,
+				"power": 1.1,
+				"shoot_target": true,
+				"on_hit": {
+					"impact_damage": {
+						"destroy_on_hit": false,
+						"knockback": true,
+						"damage": 10
+					},
+					"definition_event": {
+						"event_trigger": {
+							"event": "sk:weak_detonation"
+						}
+					}
+				}
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"min_distance": 55
+				}
+			},
+			"minecraft:timer": {
+				"time": 10,
+				"time_down_event": {
+					"event": "sk:weak_detonation"
+				}
+			}
+		},
+		"events": {
+			"sk:weak_detonation": {
+				"add": {
+					"component_groups": [
+						"sk:detonate_weak"
+					]
+				}
+			}
+		}
+	}
+}

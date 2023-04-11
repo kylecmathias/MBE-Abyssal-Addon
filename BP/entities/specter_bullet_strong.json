@@ -1,0 +1,37 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "sk:specter_bullet_strong",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:projectile": {
+				"anchor": 0,
+				"destroy_on_hurt": true,
+				"gravity": 0.02,
+				"inertia": 1,
+				"liquid_inertia": 1,
+				"multiple_targets": false,
+				"power": 1.5,
+				"shoot_target": true,
+				"should_bounce": true,
+				"on_hit": {
+					"impact_damage": {
+						"destroy_on_hit": true,
+						"knockback": true,
+						"damage": 13
+					}
+				}
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"min_distance": 55
+				}
+			}
+		},
+		"events": {}
+	}
+}

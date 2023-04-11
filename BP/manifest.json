@@ -14,8 +14,8 @@
 		}
 	},
 	"header": {
-		"name": "pack.name",
-		"description": "pack.description",
+		"name": "Abyssal Addon Behavior",
+		"description": "Behavior for Abyssal Addon",
 		"min_engine_version": [
 			1,
 			19,

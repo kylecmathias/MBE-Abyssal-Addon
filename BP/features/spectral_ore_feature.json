@@ -1,0 +1,22 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "sk:spectral_ore_feature"
+		},
+		"count": 3,
+		"replace_rules": [
+			{
+				"places_block": {
+					"name": "sk:spectral_ore",
+					"states": {}
+				},
+				"may_replace": [
+					{
+						"name": "minecraft:end_stone"
+					}
+				]
+			}
+		]
+	}
+}

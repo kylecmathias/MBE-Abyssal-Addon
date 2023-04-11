@@ -1,0 +1,20 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sk:titanium_scrap",
+			"category": "items"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sk_titanium_scrap"
+			},
+			"minecraft:display_name": {
+				"value": "Titanium Scrap"
+			},
+			"minecraft:creative_category": {
+				"parent": "items"
+			}
+		}
+	}
+}

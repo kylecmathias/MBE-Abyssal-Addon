@@ -1,0 +1,20 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sk:abyss_scrap",
+			"category": "items"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sk_abyss_scrap"
+			},
+			"minecraft:display_name": {
+				"value": "Abyss Scrap"
+			},
+			"minecraft:creative_category": {
+				"parent": "items"
+			}
+		}
+	}
+}

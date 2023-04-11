@@ -1,0 +1,17 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sk:spectral_soul",
+			"category": "nature"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sk_spectral_soul"
+			},
+			"minecraft:display_name": {
+				"value": "Spectral Soul"
+			}
+		}
+	}
+}

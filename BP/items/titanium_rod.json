@@ -1,0 +1,20 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sk:titanium_rod",
+			"category": "items"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sk_titanium_rod"
+			},
+			"minecraft:display_name": {
+				"value": "Titanium Rod"
+			},
+			"minecraft:creative_category": {
+				"parent": "items"
+			}
+		}
+	}
+}

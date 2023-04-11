@@ -1,0 +1,17 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sk:magma_soul",
+			"category": "nature"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sk_magma_soul"
+			},
+			"minecraft:display_name": {
+				"value": "Magma Soul"
+			}
+		}
+	}
+}

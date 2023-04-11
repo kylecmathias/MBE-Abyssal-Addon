@@ -1,0 +1,17 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "sk:darkess_soul",
+			"category": "nature"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "sk_darkess_soul"
+			},
+			"minecraft:display_name": {
+				"value": "Darkness Soul"
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "sk:spectral_ore"
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 5
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 9999999999999
+			},
+			"minecraft:map_color": "#C9C9C9",
+			"minecraft:display_name": "Spectral Ore",
+			"minecraft:loot": "loot_tables/spectral_ore.json",
+			"minecraft:creative_category": {
+				"category": "nature",
+				"group": "itemGroup.name.ore"
+			}
+		}
+	}
+}

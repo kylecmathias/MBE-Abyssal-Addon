@@ -1,0 +1,49 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.shadow_stalker": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"shadow_stalker.idle"
+					],
+					"transitions": [
+						{
+							"attack_melee": "query.is_ram_attacking"
+						},
+						{
+							"moving": "query.is_moving"
+						}
+					]
+				},
+				"attack_melee": {
+					"animations": [
+						"shadow_stalker.attack"
+					],
+					"transitions": [
+						{
+							"idle": "query.is_idling"
+						},
+						{
+							"moving": "query.is_moving"
+						}
+					]
+				},
+				"moving": {
+					"animations": [
+						"shadow_stalker.movement"
+					],
+					"transitions": [
+						{
+							"attack_melee": "query.is_ram_attacking"
+						},
+						{
+							"idle": "query.is_idling"
+						}
+					]
+				}
+			}
+		}
+	}
+}

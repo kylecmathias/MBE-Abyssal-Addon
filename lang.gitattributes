@@ -1,0 +1,2 @@
+*.mcfunction linguist-detectable=false
+*.json linguist-detectable=true
